@@ -12,6 +12,8 @@ html(lang="en")
 
         meta(name="theme-color", content="#ee720d")
 
+        link(rel="icon", href="/static/favicon.png", type="image/png")
+
         link(rel="stylesheet", href="/static/tomorrow-night.min.css")
         link(rel="stylesheet", href="/static/style.css")
 
@@ -23,7 +25,9 @@ html(lang="en")
 
     body
         #container
-            h1 LangMyst
+            .title
+                img(src="/static/lm.png", alt="logo")
+                h1 LangMyst
             h3 Programming language detection Web API
 
             p A very simple Web API for detecting programming languages. It calls #[a(href="https://github.com/yoeo/guesslang") yoeo/guesslang] behind the scenes.
@@ -39,7 +43,7 @@ html(lang="en")
                     pre: code.language-json
                         |{
                         |    "snippets": [
-                        |        "#include <stdio.h> int main() { printf(); return 0; }",
+                        |        "#include &lt;stdio.h&gt; int main() { printf(); return 0; }",
                         |        "using System.Collections.Generic; class Program { public static void Main() { Console.WriteLine(); } }"
                         |    ]
                         |}
