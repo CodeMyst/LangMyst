@@ -1,0 +1,59 @@
+doctype html
+html(lang="en")
+    head
+        title LangMyst
+
+        meta(name="title", content="LangMyst")
+        meta(name="description", content="Programming language detection Web API (wrapper around yoeo/guesslang)")
+
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+
+        meta(name="theme-color", content="#ee720d")
+
+        link(rel="stylesheet", href="/static/tomorrow-night.min.css")
+        link(rel="stylesheet", href="/static/style.css")
+
+        link(rel="preconnect", href="https://fonts.googleapis.com")
+        link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Ubuntu&family=Ubuntu+Mono&display=swap", rel="stylesheet")
+
+        script(src="/static/highlight.min.js")
+
+    body
+        #container
+            h1 LangMyst
+            h3 Programming language detection Web API
+
+            p A very simple Web API for detecting programming languages. It calls #[a(href="https://github.com/yoeo/guesslang") yoeo/guesslang] behind the scenes.
+
+            p The API is completely free, no account registration required. Currently the API is rate limited to 5 requests per second, and the max payload size is 1MB. All of this is subject to change, depending on if the API gets abused or gets a lot of requests.
+
+            .api-call
+                .sig
+                    code.method GET
+                    code.url https://lang.myst.rs/api/detect
+                .body
+                    span Request
+                    pre: code.language-json
+                        |{
+                        |    "snippets": [
+                        |        "#include <stdio.h> int main() { printf(); return 0; }",
+                        |        "using System.Collections.Generic; class Program { public static void Main() { Console.WriteLine(); } }"
+                        |    ]
+                        |}
+                .body
+                    span Response
+                    pre: code.language-json
+                        |{
+                        |    "languages": [
+                        |        "C",
+                        |        "C#"
+                        |    ]
+                        |}
+
+            p Built by #[a(href="https://myst.rs/") CodeMyst]. Source available on #[a(href="https://github.com/CodeMyst/LangMyst") GitHub].
+
+        script
+            | hljs.highlightAll();
