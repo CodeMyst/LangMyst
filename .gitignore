@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/langmyst
+langmyst.so
+langmyst.dylib
+langmyst.dll
+langmyst.a
+langmyst.lib
+langmyst-test-*
+*.exe
+*.o
+*.obj
+*.lst
