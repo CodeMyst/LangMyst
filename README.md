@@ -1,2 +1,2 @@
 # LangMyst
-Language detection Web API (wrapper around yoeo/guesslang)
+Language detection Web API (wrapper around go-enry)
