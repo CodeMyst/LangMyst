@@ -19,7 +19,7 @@ public string detectSnippet(string snippet) @safe
 
     write(chainPath(tempDir(), name), snippet);
 
-    auto cmd = execute(["guesslang", chainPath(tempDir(), name).array()]);
+    auto cmd = execute(["pastemyst-autodetect", chainPath(tempDir(), name).array()]);
     string res = "Unknown";
 
     if (cmd.status != 0)
@@ -27,12 +27,7 @@ public string detectSnippet(string snippet) @safe
         throw new Exception("Failed detecting the language.");
     }
 
-    if (cmd.output.length < "Programming language: ".length + 1)
-    {
-        throw new Exception("Unexpected output from running the detection command");
-    }
-
-    res = cmd.output["Programming language: ".length..$].strip();
+    res = cmd.output.strip();
 
     remove(chainPath(tempDir(), name));
 

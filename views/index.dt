@@ -4,7 +4,7 @@ html(lang="en")
         title LangMyst
 
         meta(name="title", content="LangMyst")
-        meta(name="description", content="Programming language detection Web API (wrapper around yoeo/guesslang)")
+        meta(name="description", content="Programming language detection Web API (wrapper around go-enry)")
 
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -30,7 +30,7 @@ html(lang="en")
                 h1 LangMyst
             h3 Programming language detection Web API
 
-            p A very simple Web API for detecting programming languages. It calls #[a(href="https://github.com/yoeo/guesslang") yoeo/guesslang] behind the scenes.
+            p A very simple Web API for detecting programming languages. It calls #[a(href="https://github.com/go-enry/go-enry") go-enry] behind the scenes.
 
             p The API is completely free, no account registration required. Currently the API is rate limited to 5 requests per second, and the max payload size is 1MB. All of this is subject to change, depending on if the API gets abused or gets a lot of requests.
 
