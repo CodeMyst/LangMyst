@@ -17,12 +17,12 @@ private struct DetectResponse
 @path("/api/")
 public interface IRest
 {
-    DetectResponse getDetect(@viaBody() DetectRequest request) @safe;
+    DetectResponse postDetect(@viaBody() DetectRequest request) @safe;
 }
 
 public class Rest : IRest
 {
-    public DetectResponse getDetect(DetectRequest request)
+    public DetectResponse postDetect(DetectRequest request)
     {
         enforceHTTP(request.snippets.length > 0, HTTPStatus.badRequest, "At least one snippet must be provided.");
 

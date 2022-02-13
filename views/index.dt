@@ -36,7 +36,7 @@ html(lang="en")
 
             .api-call
                 .sig
-                    code.method GET
+                    code.method POST
                     code.url https://lang.myst.rs/api/detect
                 .body
                     span Request
