@@ -4,7 +4,7 @@
 	],
 	"copyright": "Copyright © 2022, CodeMyst",
 	"dependencies": {
-		"vibe-d": "~>0.9.4"
+		"vibe-d": "~>0.9.7"
 	},
 	"description": "Language detection Web API (wrapper around go-enry)",
 	"license": "MIT",
