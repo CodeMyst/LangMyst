@@ -6,7 +6,6 @@ import std.path;
 import std.uuid;
 import std.array;
 import std.string;
-import std.stdio : writeln;
 
 public string detectSnippet(string snippet) @safe
 {
@@ -19,7 +18,7 @@ public string detectSnippet(string snippet) @safe
 
     write(chainPath(tempDir(), name), snippet);
 
-    auto cmd = execute(["pastemyst-autodetect", chainPath(tempDir(), name).array()]);
+    auto cmd = execute(["guesslang-bun", chainPath(tempDir(), name).array()]);
     string res = "Unknown";
 
     if (cmd.status != 0)
